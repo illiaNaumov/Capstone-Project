@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "182782847799",
+    "project_id": "kaizenhelper"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182782847799:android:674be457c51fdede",
+        "android_client_info": {
+          "package_name": "com.udacity.ilmov.kaizenhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182782847799-78alj836hoc8afeftak4afsbsjbju668.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.udacity.ilmov.kaizenhelper",
+            "certificate_hash": "D924AC254B6F6B54D16AC377BF6FB5C0F7D75E7D"
+          }
+        },
+        {
+          "client_id": "182782847799-g90er57n7i5lh1ndqtdvrmv0c4941da1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvm22GLVThCP50ILj_xJ8c6bnQ6or_a_g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

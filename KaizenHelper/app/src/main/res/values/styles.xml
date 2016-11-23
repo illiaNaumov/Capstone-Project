@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="ListText">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/list_text_size</item>
+    </style>
+</resources>

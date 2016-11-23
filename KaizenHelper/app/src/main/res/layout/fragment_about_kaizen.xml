@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.udacity.ilmov.kaizenhelper.fragments.AboutKaizenFragment"
+    android:background="@color/primary_light">
+
+    <ImageView
+        android:id="@+id/about_kaizen_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:text="@string/about_kaizen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/about_kaizen_image_view"/>
+
+
+</RelativeLayout>

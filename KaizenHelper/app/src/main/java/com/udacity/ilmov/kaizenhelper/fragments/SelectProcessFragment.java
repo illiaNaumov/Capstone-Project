@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +31,7 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SelectProcessFragment extends Fragment {
+public class SelectProcessFragment extends Fragment implements  LoaderManager.LoaderCallbacks<Cursor>{
 
 
     @BindView(R.id.add_improvement_fab)
@@ -67,8 +70,7 @@ public class SelectProcessFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_select_process, container, false);
         ButterKnife.bind(this, rootView);
 
-        improvements = getImprovements();
-        improvementList.setAdapter(new ImprovementListAdapter(getContext(), improvements));
+        getLoaderManager().initLoader(0, null, this);
 
         adView = (AdView)rootView.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -103,24 +105,36 @@ public class SelectProcessFragment extends Fragment {
         }
     }
 
-    private ArrayList<Improvement> getImprovements(){
-        ArrayList<Improvement> currImprovements = new ArrayList<>();
-        Cursor cursor = getContext().getContentResolver().query(KaizenProvider.KAIZEN_CONTENT_URI,
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        return new CursorLoader(getContext(),
+                KaizenProvider.KAIZEN_CONTENT_URI,
                 mProjection,
-                null,
-                null,
-                null);
-        if(cursor != null){
-            while(cursor.moveToNext()){
-                currImprovements.add(new Improvement(cursor.getInt(INDEX_ID),
-                        cursor.getString(INDEX_PROCESS_NAME),
-                        cursor.getString(INDEX_IMPROVER),
-                        cursor.getFloat(INDEX_RATING),
-                        cursor.getString(INDEX_IMPROVEMENT_DESCRIPTION)));
-            }
-            cursor.close();
-        }
-        return currImprovements;
+                null, null, null);
     }
 
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        ArrayList<Improvement> currImprovements = new ArrayList<>();
+
+        if(data != null){
+            while(data.moveToNext()){
+                currImprovements.add(new Improvement(data.getInt(INDEX_ID),
+                        data.getString(INDEX_PROCESS_NAME),
+                        data.getString(INDEX_IMPROVER),
+                        data.getFloat(INDEX_RATING),
+                        data.getString(INDEX_IMPROVEMENT_DESCRIPTION)));
+            }
+            data.close();
+        }
+
+        improvements = currImprovements;
+        improvementList.setAdapter(new ImprovementListAdapter(getContext(), improvements));
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+
+    }
 }

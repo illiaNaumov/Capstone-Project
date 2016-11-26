@@ -10,16 +10,17 @@
         android:id="@+id/about_kaizen_image_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginTop="@dimen/about_kaizen_image_margin"
+        android:layout_marginBottom="@dimen/about_kaizen_image_margin"
+        android:contentDescription="@string/kaizen_image"/>
 
     <TextView
         android:text="@string/about_kaizen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:padding="10dp"
-        android:textSize="18sp"
+        android:padding="@dimen/default_padding"
+        android:textSize="@dimen/about_kaizen_text_size"
         android:layout_below="@+id/about_kaizen_image_view"/>
 
 

@@ -23,7 +23,7 @@
         android:id="@+id/process_name"
         android:gravity="center"
         android:layout_height="@dimen/process_name_height"
-        android:hint="Type process name here"
+        android:hint="@string/type_process_hint"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/process_name_text_size"
         android:lines="1"
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:inputType="textCapSentences|textMultiLine"
-        android:hint="Type here what could be improved in this process"
+        android:hint="@string/improvement_description_hint"
         android:gravity="top|start"
         android:layout_weight="1"
         android:background="@drawable/edit_text_background"
@@ -59,7 +59,7 @@
         android:id="@+id/done_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="done"
+        android:text="@string/done"
         android:background="@color/primary_dark"/>
 
 </LinearLayout>

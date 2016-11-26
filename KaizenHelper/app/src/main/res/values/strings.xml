@@ -4,10 +4,20 @@
     <string name="drawer_open">Open side bar</string>
     <string name="drawer_close">Close side bar</string>
     <string name="title_text">Google Sign-In</string>
+    <string name="optional_action">Optional Action</string>
 
     <!--widget -->
     <string name="empty_processes_list">No information available</string>
     <string name="title_widget_detail">Kaizen list</string>
+
+    <!--activity improve process -->
+    <string name="type_process_hint">Type process name here</string>
+    <string name="improvement_description_hint">Type here what could be improved in this process</string>
+    <string name="done">done</string>
+
+
+    <!-- content description -->
+    <string name="kaizen_image">Kaizen image</string>
 
     <!-- Sign-in status messages -->
     <string name="signed_in_fmt">Signed in as: %s</string>

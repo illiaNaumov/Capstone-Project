@@ -28,7 +28,7 @@
             android:id="@+id/google_icon"
             android:layout_width="@dimen/google_logo_size"
             android:layout_height="@dimen/google_logo_size"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/default_margin"
             android:layout_marginTop="@dimen/g_top_margin"
             android:contentDescription="@string/desc_google_icon"
             android:src="@drawable/googleg_color" />
@@ -41,7 +41,7 @@
             android:text="@string/title_text"
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:textSize="36sp" />
+            android:textSize="@dimen/sign_in_text_size" />
 
         <TextView
             android:id="@+id/status"
@@ -58,7 +58,7 @@
             android:fadeScrollbars="true"
             android:gravity="center"
             android:maxLines="5"
-            android:padding="10dp"
+            android:padding="@dimen/default_padding"
             android:scrollbars="vertical"
             android:textColor="@android:color/white"
             android:textSize="@dimen/default_text_size" />
@@ -69,8 +69,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            tools:text="Optional Action"
-            tools:visibility="visible" />
+            tools:text="@string/optional_action"
+            tools:visibility="visible"
+            android:contentDescription="@string/optional_action"/>
 
     </LinearLayout>
 
@@ -95,8 +96,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
+            android:paddingLeft="@dimen/default_side_padding"
+            android:paddingRight="@dimen/default_side_padding"
             android:visibility="gone"
             tools:visibility="visible">
 
@@ -105,7 +106,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/sign_out" />
+                android:text="@string/sign_out"
+                android:contentDescription="@string/sign_out"/>
 
         </LinearLayout>
 

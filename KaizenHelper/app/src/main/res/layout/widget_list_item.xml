@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
-    android:padding="15dp"
+    android:padding="@dimen/default_side_padding"
     >
 
 

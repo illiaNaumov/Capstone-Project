@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.udacity.ilmov.kaizenhelper.R;
 import com.udacity.ilmov.kaizenhelper.data.KaizenContract;
 import com.udacity.ilmov.kaizenhelper.data.KaizenProvider;
+import com.udacity.ilmov.kaizenhelper.models.Improvement;
+import com.udacity.ilmov.kaizenhelper.sync.SaveImprovementAsyncTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -79,20 +81,19 @@ public class ImproveProcessActivity extends AppCompatActivity {
     }
 
     private void saveImprovement() {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(KaizenContract.Improvements.COLUMN_NAME_IMPROVER, "illia");
-        contentValues.put(KaizenContract.Improvements.COLUMN_NAME_PROCESS_NAME, process_name.getText().toString());
-        contentValues.put(KaizenContract.Improvements.COLUMN_NAME_RATING, ratingTxt.getText().toString());
-        contentValues.put(KaizenContract.Improvements.COLUMN_NAME_IMPROVEMENT_DESCRIPTION, improveEditTxt.getText().toString());
+        Improvement improvement = new Improvement();
+        improvement.setName(process_name.getText().toString());
+        improvement.setRating(Float.parseFloat(ratingTxt.getText().toString()));
+        improvement.setWhatToImprove(improveEditTxt.getText().toString());
 
         if (process_id != -1) {
-            contentValues.put(KaizenContract.Improvements._ID, process_id);
-            String mSelection = KaizenContract.Improvements._ID + " = ?";
-            String[] selectionArgs = {String.valueOf(process_id)};
-            getContentResolver().update(KaizenProvider.KAIZEN_CONTENT_URI, contentValues, mSelection, selectionArgs);
+            improvement.setId(process_id);
         } else {
-            getContentResolver().insert(KaizenProvider.KAIZEN_CONTENT_URI, contentValues);
+            improvement.setId(-1);
         }
+
+        SaveImprovementAsyncTask saveImprovementAsyncTask = new SaveImprovementAsyncTask(this);
+        saveImprovementAsyncTask.execute(improvement);
 
     }
 

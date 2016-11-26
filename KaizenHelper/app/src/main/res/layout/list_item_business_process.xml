@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:text="Packing"
+        android:text="@string/packing_example"
         android:gravity="center_vertical"
         android:layout_marginStart="@dimen/list_left_padding"
         style="@style/ListText"/>
@@ -32,6 +32,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/ic_remove_circle_outline"
         android:clickable="true"
-        android:background="@null"/>
+        android:background="@null"
+        android:contentDescription="@string/delete_list_item"/>
 
 </LinearLayout>

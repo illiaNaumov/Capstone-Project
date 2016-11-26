@@ -6,6 +6,8 @@
     <string name="title_text">Google Sign-In</string>
     <string name="optional_action">Optional Action</string>
 
+    <string name="delete_list_item">Delete list item</string>
+
     <!--widget -->
     <string name="empty_processes_list">No information available</string>
     <string name="title_widget_detail">Kaizen list</string>
@@ -67,5 +69,7 @@
         With Kaizen helper you will be able to evaluate the processes
         in your company and to offer to your colleagues opportunities to improve that will ultimately reduce
         the cost of production.</string>
+
+    <string name="packing_example">Packing</string>
 
 </resources>

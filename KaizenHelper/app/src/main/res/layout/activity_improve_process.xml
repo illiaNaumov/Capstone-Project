@@ -22,10 +22,10 @@
         android:layout_width="match_parent"
         android:id="@+id/process_name"
         android:gravity="center"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/process_name_height"
         android:hint="Type process name here"
         android:textColor="@color/primary_text"
-        android:textSize="24sp"
+        android:textSize="@dimen/process_name_text_size"
         android:lines="1"
         android:maxLength="20"/>
 
@@ -52,8 +52,8 @@
         android:gravity="top|start"
         android:layout_weight="1"
         android:background="@drawable/edit_text_background"
-        android:layout_margin="10dp"
-        android:padding="5dp" />
+        android:layout_margin="@dimen/edit_text_margin"
+        android:padding="@dimen/edit_text_padding" />
 
     <Button
         android:id="@+id/done_btn"

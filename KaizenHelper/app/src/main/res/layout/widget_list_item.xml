@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/widget_list_item_business_process_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:padding="15dp"
+    >
+
+
+    <TextView
+        android:id="@+id/widget_list_process_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:text="Packing"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/list_left_padding"
+        style="@style/ListText"/>
+    <TextView
+        android:id="@+id/widget_list_process_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="7"
+        android:gravity="center"
+        style="@style/ListText"/>
+
+</LinearLayout>

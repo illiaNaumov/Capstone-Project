@@ -1,6 +1,5 @@
 package com.udacity.ilmov.kaizenhelper.adapters;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.udacity.ilmov.kaizenhelper.R;
 import com.udacity.ilmov.kaizenhelper.activities.ImproveProcessActivity;

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.google.android.gms.ads.*;
 import com.udacity.ilmov.kaizenhelper.R;
 import com.udacity.ilmov.kaizenhelper.activities.ImproveProcessActivity;
 import com.udacity.ilmov.kaizenhelper.adapters.ImprovementListAdapter;
@@ -35,8 +36,7 @@ public class SelectProcessFragment extends Fragment {
     @BindView(R.id.processes_list)
     ListView improvementList;
 
-//    private ArrayList<Improvement> improvements;
-//    private ListAdapter listAdapter;
+    private AdView adView;
 
     private static final String [] mProjection = new String[]{
             KaizenContract.Improvements._ID,
@@ -69,7 +69,29 @@ public class SelectProcessFragment extends Fragment {
 
         improvements = getImprovements();
         improvementList.setAdapter(new ImprovementListAdapter(getContext(), improvements));
+
+        adView = (AdView)rootView.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
         return rootView;
+    }
+
+    @Override
+    public void onPause() {
+        adView.pause();
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adView.resume();
+    }
+
+    @Override
+    public void onDestroy() {
+        adView.destroy();
+        super.onDestroy();
     }
 
     @OnClick({R.id.add_improvement_fab})

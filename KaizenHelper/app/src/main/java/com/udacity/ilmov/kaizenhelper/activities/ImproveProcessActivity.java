@@ -25,6 +25,9 @@ public class ImproveProcessActivity extends AppCompatActivity {
     public static final String RATING = "com.udacity.ilmov.kaizenhelper_process_rating";
     public static final String DESCRIPTION = "com.udacity.ilmov.kaizenhelper_process_description";
 
+    public static final String ACTION_DATA_UPDATED =
+            "com.udacity.ilmov.kaizenhelper.ACTION_DATA_UPDATED";
+
     @BindView(R.id.process_name)
     EditText process_name;
     @BindView(R.id.rating_bar)
@@ -68,6 +71,7 @@ public class ImproveProcessActivity extends AppCompatActivity {
                     process_name.setError(getString(R.string.process_name_warning));
                 } else {
                     saveImprovement();
+                    updateWidgets();
                     startActivity(new Intent(this, MainActivity.class));
                 }
                 break;
@@ -102,5 +106,12 @@ public class ImproveProcessActivity extends AppCompatActivity {
             ratingBar.setRating(bundle.getFloat(RATING));
             improveEditTxt.setText(bundle.getString(DESCRIPTION));
         }
+    }
+
+    private void updateWidgets() {
+        // Setting the package ensures that only components in our app will receive the broadcast
+        Intent dataUpdatedIntent = new Intent(ACTION_DATA_UPDATED)
+                .setPackage(this.getPackageName());
+        this.sendBroadcast(dataUpdatedIntent);
     }
 }

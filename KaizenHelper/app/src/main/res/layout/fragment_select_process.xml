@@ -1,19 +1,35 @@
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
 
     tools:context="com.udacity.ilmov.kaizenhelper.fragments.SelectProcessFragment">
 
-    <ListView
-        android:id="@+id/processes_list"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true">
+        android:layout_height="match_parent">
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            ads:adSize="BANNER"
+            android:layout_weight="0.1"/>
+        <ListView
+            android:id="@+id/processes_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:layout_weight="0.9">
+        </ListView>
 
-    </ListView>
+    </LinearLayout>
+
+
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_improvement_fab"
@@ -25,5 +41,6 @@
         android:src="@drawable/ic_playlist_add"
         app:layout_anchor="@id/processes_list"
         app:layout_anchorGravity="bottom|right|end" />
+
 
 </android.support.design.widget.CoordinatorLayout>
